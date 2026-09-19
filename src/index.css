@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    color: #1e293b;
+    background-color: #f8fafc;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Print CSS */
+@media print {
+  /* Hide interactive app UI elements */
+  nav,
+  aside,
+  header,
+  footer,
+  .no-print,
+  button,
+  .btn,
+  .app-sidebar,
+  .app-header,
+  .toast-container {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 11pt !important;
+    font-family: 'Times New Roman', Times, serif !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-page {
+    page-break-after: always;
+    break-after: page;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 1.5cm !important;
+    box-sizing: border-box !important;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th, td {
+    border: 1px solid #000000 !important;
+    padding: 4px 6px !important;
+    font-size: 10pt !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .kop-madrasah {
+    border-bottom: 3px double #000000 !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 10px !important;
+  }
+}
+
+/* Screen styling for paper preview */
+.paper-a4 {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 20mm 15mm;
+  margin: 1rem auto;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  font-family: 'Times New Roman', Times, Georgia, serif;
+}
+
+@media (max-width: 900px) {
+  .paper-a4 {
+    width: 100%;
+    min-height: auto;
+    padding: 15px;
+    margin: 0.5rem 0;
+  }
+}
